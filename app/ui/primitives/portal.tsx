@@ -89,7 +89,7 @@ interface PortalProps {
    *
    * @see Docs https://TODO.com/portal#portal-containerRef
    */
-  containerRef?: React.RefObject<Node>;
+  containerRef?: React.RefObject<Node | null>;
   unstable_skipRenderBeforeHydration?: boolean;
 }
 

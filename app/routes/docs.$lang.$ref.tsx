@@ -783,7 +783,7 @@ function useIsActivePath(to: string) {
   return Boolean(match);
 }
 
-function useCodeBlockCopyButton(ref: React.RefObject<HTMLDivElement>) {
+function useCodeBlockCopyButton(ref: React.RefObject<HTMLDivElement | null>) {
   let location = useLocation();
   React.useEffect(() => {
     let container = ref.current;

@@ -13,7 +13,7 @@ function isLinkEvent(event: MouseEvent) {
   );
 }
 
-function useDelegatedReactRouterLinks(nodeRef: React.RefObject<HTMLElement>) {
+function useDelegatedReactRouterLinks(nodeRef: React.RefObject<HTMLElement | null>) {
   let navigate = useNavigate();
 
   React.useEffect(() => {

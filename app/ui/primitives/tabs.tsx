@@ -578,7 +578,7 @@ Tab.displayName = "Tab";
  */
 const TabPanelsImpl = React.forwardRef(
   ({ children, as: Comp = "div", ...props }, forwardedRef) => {
-    let ownRef = React.useRef();
+    let ownRef = React.useRef(undefined);
     let ref = useComposedRefs(ownRef, forwardedRef);
     let [tabPanels, setTabPanels] =
       useCollectionInit<TabPanelCollectionItem<FocusableElement>>();

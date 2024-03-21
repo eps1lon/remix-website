@@ -31,7 +31,7 @@ Popover.displayName = "Popover";
 
 interface PopoverProps {
   children: React.ReactNode;
-  targetRef: React.RefObject<PossibleElement>;
+  targetRef: React.RefObject<PossibleElement | null>;
   position?: PositionPopover;
   /**
    * Render the popover markup, but hide it – used by MenuButton so that it
@@ -182,7 +182,7 @@ function getCollisions(
 function useSimulateTabNavigationForReactTree<
   T extends HTMLElement,
   P extends HTMLElement,
->(triggerRef: React.RefObject<T>, popoverRef: React.RefObject<P>) {
+>(triggerRef: React.RefObject<T | null>, popoverRef: React.RefObject<P | null>) {
   let ownerDocument = getOwnerDocument(triggerRef.current)!;
 
   function handleKeyDown(event: KeyboardEvent) {

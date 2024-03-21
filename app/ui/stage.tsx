@@ -177,14 +177,14 @@ function useWindowScroll(fallback: number = 0): number {
 }
 
 function useRelativeWindowScroll(
-  ref: React.RefObject<HTMLElement>,
+  ref: React.RefObject<HTMLElement | null>,
   fallback: number = 0,
 ): number {
   let windowScroll = useWindowScroll(fallback);
   if (!ref.current) return fallback;
   return (
     // windowScroll - ref.current.offsetTop + document.documentElement.clientHeight
-    windowScroll - ref.current.offsetTop + window.innerHeight
     // windowScroll - ref.current.offsetTop
+    (windowScroll - ref.current.offsetTop + window.innerHeight)
   );
 }

@@ -48,7 +48,7 @@ function SubscribeProvider({ children }: { children: React.ReactNode }) {
 
 const SubscribeContext = React.createContext<null | {
   fetcher: FetcherWithComponents<SerializeFrom<typeof action>>;
-  inputRef: React.RefObject<HTMLInputElement>;
+  inputRef: React.RefObject<HTMLInputElement | null>;
 }>(null);
 
 function useSubscribeContext() {

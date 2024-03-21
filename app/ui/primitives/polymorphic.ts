@@ -2,7 +2,7 @@
 // Big thanks to Jenna for the heavy lifting! https://github.com/jjenzz
 
 import type * as React from "react";
-import { forwardRef as React_forwardRef } from "react";
+import { forwardRef as React_forwardRef, type JSX } from "react";
 
 type Merge<P1 = {}, P2 = {}> = Omit<P1, keyof P2> & P2;
 
